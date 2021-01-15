@@ -28,7 +28,7 @@
           <div class="mb-3">
             <input type="text" class="form-control searchInput" id="searchFields" placeholder="Your City Here!">
           </div>
-          <button type="search" class="btn btn-light">Submit</button>
+          <button type="search" class="btn btn-light search">Submit</button>
         </form>
       </aside>
       <!-- <ul class=recentSearches> -->
@@ -36,49 +36,56 @@
 
 
 
-
       <!-- Day 1 -->
-      <div class="col-lg-2 date">
+      <div class="col-lg-2 date container">
         Today
+        <h4 class=""></h4>
+        <span class="searchTemp">
+
+        </span>
       </div>
 
       <!-- Day 2 -->
-      <div class="col-md-2 date">
+      <div class="col-md-2 date container">
         Tomorrow
+         <h5 id="cityName">Detroit</h5>
+         <div class="iconHere">
+           <img src="" alt="icon" id="icon">
+           <h6 id="temperature">&#176F</h6>
+           <h6 id="humidity">%</h6>
+         </div>
+
       </div>
 
       <!-- Day 3 -->
-      <div class="col-md-2 date">
+      <div class="col-md-2 date container">
         The Day After Tomorrow
       </div>
       <!-- Day 4 -->
-      <div class="col-md-2 date">
+      <div class="col-md-2 date container">
         The Day After Tomorrow's Tomorrow
       </div>
       <!-- Day 5 -->
-      <div class="col-md-2 date">
+      <div class="col-md-2 date container">
         The Fourth Tomorrow
       </div>
     </div>
 
+
       <div class="row">
         <div class="col-lg-2"></div>
-        <div class="col-lg-10">
+        <div class="col-lg-10 todayWeather">
 
         </div>
       </div>
 
-
-
-
-
-
   </div>
   </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+ 
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
