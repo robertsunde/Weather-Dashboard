@@ -20,9 +20,6 @@ $.each(searchHistory, function (index, value) {
     $(".recentSearches").append("<li class='cityName' onclick='addCity("+index+")'>" + value +  '</li>');
 });
 
-
-
-
 function addCity(id) {
 $(".searchInput").val(searchHistory[id]);
 
@@ -33,10 +30,18 @@ $(".searchInput").val(searchHistory[id]);
 
 
 
-}
-}
 
+
+
+
+
+
+}
+}
 )
+
+
+
 
 })
 
