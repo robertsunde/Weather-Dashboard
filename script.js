@@ -1,17 +1,44 @@
 $(document).ready(function(){
 
+var searchHistory = [];
 
 //wire up search button to pull city from ajax call for general search
-$(".search").on("click", function(){
+$(".search").on("click", 
+
+function searchCity(data){
 var searchbar = $(".searchInput").val()
 console.log(searchbar)
 
 // mainWeatherPull(searchbar)
 
-// var recentSearches = [];
-// recentSearches.push($("recentSearches"))
-})
+searchHistory.push($(".searchInput").val())
 
+$(".searchInput").val("");
+$(".recentSearches").text("");
+
+$.each(searchHistory, function (index, value) {
+    $(".recentSearches").append("<li class='cityName' onclick='addCity("+index+")'>" + value +  '</li>');
+});
+
+
+
+
+function addCity(id) {
+$(".searchInput").val(searchHistory[id]);
+
+
+
+
+
+
+
+
+}
+}
+
+)
+
+})
 
 
 // first ajax call with weather variables (temp humidity windspeed uvindex) for today's weather
@@ -56,4 +83,3 @@ console.log(searchbar)
 
 
     
-})
