@@ -2,30 +2,30 @@ $(document).ready(function(){
 
 
 //wire up search button to pull city from ajax call for general search
-$("#destinationSearch").on("click", function(){
-var searchbar = $("#textInput").val().trim()
+$(".search").on("click", function(){
+var searchbar = $(".searchInput").val()
 console.log(searchbar)
 
-mainWeatherPull(searchbar)
+// mainWeatherPull(searchbar)
 
-var recentSearches = [];
-recentSearches.push($("recentSearches"))
+// var recentSearches = [];
+// recentSearches.push($("recentSearches"))
 })
 
 
 
 // first ajax call with weather variables (temp humidity windspeed uvindex) for today's weather
-function mainWeatherPull (searchbar){
+// function mainWeatherPull (searchbar){
 
-console.log(searchbar)
+// console.log(searchbar)
 
-$.ajax({
-url:"https://openweathermap.org/api" + searchbar + "api key from website",
-method:"GET"
-}).then(function(dataPull){
-console.log(dataPull)
-})
-}
+// $.ajax({
+// url:"https://openweathermap.org/api" + searchbar + "889e002b8fmsh68a55d24a31d654p1e691ajsn4b5a65ae9eb2",
+// method:"GET"
+// }).then(function(dataPull){
+// console.log(dataPull)
+// })
+// }
 
 
 
