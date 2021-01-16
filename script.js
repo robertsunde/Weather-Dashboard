@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+
 $(".currentDate").text(moment().format("dddd, MMMM Do"));
 $(".currentDatePlus1").text(moment().add(1,'days').format("dddd, MMMM Do"));
 $(".currentDatePlus2").text(moment().add(2,'days').format("dddd, MMMM Do"));
@@ -18,14 +20,17 @@ var searchbar = $(".searchInput").val()
 console.log(searchbar)
 weatherPull(searchbar)
 forecastPull(searchbar)
+
 $(".todayWeather").empty();
 $(".tomorrow").empty();
 $(".tomorrowPlus1").empty();
 $(".tomorrowPlus2").empty();
 $(".tomorrowPlus3").empty();
 $(".tomorrowPlus4").empty();
-},
-)
+
+
+
+
 
 
 // function cleartodayWeather() {
@@ -63,10 +68,46 @@ var windSpeed = $("<h6>").text("Wind Speed: " + response.wind.speed)
 
 $(".todayWeather").prepend(city, todayTemp, todayHumidity, windSpeed, UVindex)
 
+var weatherType = (response.weather[0].main)
+console.log(weatherType)
+
+if (weatherType=="Clouds"){
+$(".todayWeather").addClass("fas fa-cloud fa-3x")
+}
+
+else if (weatherType==="Thunderstorm"){
+    $(".todayWeather").addClass("fas fa-bolt fa-3x")
+}
+
+else if (weatherType==="Drizzle"){
+    $(".todayWeather").addClass("fas fa-cloud-rain fa-3x")
+}
+
+else if (weatherType==="Rain"){
+    $(".todayWeather").addClass("fas fa-cloud-showers-heavy fa-3x")
+}
+
+else if (weatherType==="Snow"){
+    $(".todayWeather").addClass("fas fa-snowflake fa-3x")
+}
+
+else if (weatherType==="Clear"){
+    $(".todayWeather").addClass("fas fa-circle fa-3x")
+}
+
+else {
+    $(".todayWeather").addClass("fas fa-sun fa-3x")
+}
+
 var cityName = $("<h2>").text(response.name)
 $(".lastSearch").prepend(cityName)
+localStorage.setItem("City", response.name)
+ 
 
 })}
+
+
+
    
 
 // add next function here for 5 day weather same as before
@@ -84,11 +125,73 @@ function forecastPull(searchbar) {
 
     $(".tomorrow").append(todayTemp1, todayHumidity1)
 
+    var weatherType1 = (response.list[0].weather[0].main)
+    console.log(weatherType1)
+    
+    if (weatherType1=="Clouds"){
+    $(".tomorrow").addClass("fas fa-cloud fa-3x")
+    }
+    
+    else if (weatherType1==="Thunderstorm"){
+        $(".tomorrow").addClass("fas fa-bolt fa-3x")
+    }
+    
+    else if (weatherType1==="Drizzle"){
+        $(".tomorrow").addClass("fas fa-cloud-rain fa-3x")
+    }
+    
+    else if (weatherType1==="Rain"){
+        $(".tomorrow").addClass("fas fa-cloud-showers-heavy fa-3x")
+    }
+    
+    else if (weatherType1==="Snow"){
+        $(".tomorrow").addClass("fas fa-snowflake fa-3x")
+    }
+    
+    else if (weatherType1==="Clear"){
+        $(".tomorrow").addClass("fas fa-circle fa-3x")
+    }
+    
+    else {
+        $(".tomorrow").addClass("fas fa-sun fa-3x")
+    }
+
     // Day 2 weather
     var todayTemp2 = $("<h1>").text(response.list[1].main.temp + " " + "F")
     var todayHumidity2 = $("<h6>").text("Humidity: " + response.list[1].main.humidity + "%")
 
     $(".tomorrowPlus1").append(todayTemp2, todayHumidity2)
+
+    var weatherType2 = (response.list[1].weather[0].main)
+    console.log(weatherType2)
+    
+    if (weatherType2=="Clouds"){
+    $(".tomorrowPlus1").addClass("fas fa-cloud fa-3x")
+    }
+    
+    else if (weatherType2==="Thunderstorm"){
+        $(".tomorrowPlus1").addClass("fas fa-bolt fa-3x")
+    }
+    
+    else if (weatherType2==="Drizzle"){
+        $(".tomorrowPlus1").addClass("fas fa-cloud-rain fa-3x")
+    }
+    
+    else if (weatherType2==="Rain"){
+        $(".tomorrowPlus1").addClass("fas fa-cloud-showers-heavy fa-3x")
+    }
+    
+    else if (weatherType2==="Snow"){
+        $(".tomorrowPlus1").addClass("fas fa-snowflake fa-3x")
+    }
+    
+    else if (weatherType2==="Clear"){
+        $(".tomorrowPlus1").addClass("fas fa-circle fa-3x")
+    }
+    
+    else {
+        $(".tomorrowPlus1").addClass("fas fa-sun fa-3x")
+    }
 
     // Day 3 weather
     var todayTemp3 = $("<h1>").text(response.list[2].main.temp + " " + "F")
@@ -96,11 +199,73 @@ function forecastPull(searchbar) {
 
     $(".tomorrowPlus2").append(todayTemp3, todayHumidity3)
 
+    var weatherType3 = (response.list[2].weather[0].main)
+    console.log(weatherType3)
+
+    if (weatherType3=="Clouds"){
+        $(".tomorrowPlus2").addClass("fas fa-cloud fa-3x")
+        }
+        
+        else if (weatherType3==="Thunderstorm"){
+            $(".tomorrowPlus2").addClass("fas fa-bolt fa-3x")
+        }
+        
+        else if (weatherType3==="Drizzle"){
+            $(".tomorrowPlus2").addClass("fas fa-cloud-rain fa-3x")
+        }
+        
+        else if (weatherType3==="Rain"){
+            $(".tomorrowPlus2").addClass("fas fa-cloud-showers-heavy fa-3x")
+        }
+        
+        else if (weatherType3==="Snow"){
+            $(".tomorrowPlus2").addClass("fas fa-snowflake fa-3x")
+        }
+        
+        else if (weatherType3==="Clear"){
+            $(".tomorrowPlus2").addClass("fas fa-circle fa-3x")
+        }
+        
+        else {
+            $(".tomorrowPlus2").addClass("fas fa-sun fa-3x")
+        }
+
     // Day 4 weather
     var todayTemp4 = $("<h1>").text(response.list[3].main.temp + " " + "F")
     var todayHumidity4 = $("<h6>").text("Humidity: " + response.list[3].main.humidity + "%")
 
     $(".tomorrowPlus3").append(todayTemp4, todayHumidity4)
+
+    var weatherType4 = (response.list[3].weather[0].main)
+    console.log(weatherType4)
+
+    if (weatherType4=="Clouds"){
+        $(".tomorrowPlus3").addClass("fas fa-cloud fa-3x")
+        }
+        
+        else if (weatherType4==="Thunderstorm"){
+            $(".tomorrowPlus3").addClass("fas fa-bolt fa-3x")
+        }
+        
+        else if (weatherType4==="Drizzle"){
+            $(".tomorrowPlus3").addClass("fas fa-cloud-rain fa-3x")
+        }
+        
+        else if (weatherType4==="Rain"){
+            $(".tomorrowPlus3").addClass("fas fa-cloud-showers-heavy fa-3x")
+        }
+        
+        else if (weatherType4==="Snow"){
+            $(".tomorrowPlus3").addClass("fas fa-snowflake fa-3x")
+        }
+        
+        else if (weatherType4==="Clear"){
+            $(".tomorrowPlus3").addClass("fas fa-circle fa-3x")
+        }
+        
+        else {
+            $(".tomorrowPlus3").addClass("fas fa-sun fa-3x")
+        }
 
     // Day 5 weather
     var todayTemp5 = $("<h1>").text(response.list[4].main.temp + " " + "F")
@@ -108,14 +273,77 @@ function forecastPull(searchbar) {
 
     $(".tomorrowPlus4").append(todayTemp5, todayHumidity5)
 
+    var weatherType5 = (response.list[4].weather[0].main)
+    console.log(weatherType5)
 
+    if (weatherType5=="Clouds"){
+        $(".tomorrowPlus4").addClass("fas fa-cloud fa-3x")
+        }
+        
+        else if (weatherType5==="Thunderstorm"){
+            $(".tomorrowPlus4").addClass("fas fa-bolt fa-3x")
+        }
+        
+        else if (weatherType5==="Drizzle"){
+            $(".tomorrowPlus4").addClass("fas fa-cloud-rain fa-3x")
+        }
+        
+        else if (weatherType5==="Rain"){
+            $(".tomorrowPlus4").addClass("fas fa-cloud-showers-heavy fa-3x")
+        }
+        
+        else if (weatherType5==="Snow"){
+            $(".tomorrowPlus4").addClass("fas fa-snowflake fa-3x")
+        }
+        
+        else if (weatherType5==="Clear"){
+            $(".tomorrowPlus4").addClass("fas fa-circle fa-3x")
+        }
+        
+        else {
+            $(".tomorrowPlus4").addClass("fas fa-sun fa-3x")
+        }
 
+//     var weatherType = (response.weather[0].main)
+// console.log(weatherType)
 
+// if (weatherType=="Clouds"){
+// $(".todayWeather").addClass("fas fa-cloud fa-3x")
+// }
+
+// else if (weatherType==="Thunderstorm"){
+//     $(".todayWeather").addClass("fas fa-bolt fa-3x")
+// }
+
+// else if (weatherType==="Drizzle"){
+//     $(".todayWeather").addClass("fas fa-cloud-rain fa-3x")
+// }
+
+// else if (weatherType==="Rain"){
+//     $(".todayWeather").addClass("fas fa-cloud-showers-heavy fa-3x")
+// }
+
+// else if (weatherType==="Snow"){
+//     $(".todayWeather").addClass("fas fa-snowflake fa-3x")
+// }
+
+// else if (weatherType==="Clear"){
+//     $(".todayWeather").addClass("fas fa-circle fa-3x")
+// }
+
+// else {
+//     $(".todayWeather").addClass("fas fa-sun fa-3x")
+// }
 
     })}
 
 
 
+}
+
+
+
+)})
 
 
 
@@ -125,14 +353,3 @@ function forecastPull(searchbar) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-})
