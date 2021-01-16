@@ -11,10 +11,7 @@
     text-align: center;
 }
 
-.left {
 
-    
-}
 
 .right {
     text-align: right;
@@ -26,7 +23,7 @@
     font-size: medium;
 }
 
-h1 {
+header {
 
     padding: 1cm;
 }
@@ -36,3 +33,21 @@ h1 {
     float:right;
 }
 
+.lastSearch {
+    margin-top: .5cm;
+    margin-bottom: .5cm;
+    color: white;
+    text-align: center;
+}
+
+.todayWeather {
+
+    margin-bottom: 0cm;
+
+
+}
+
+.rightSide {
+
+    padding-bottom: 1.5cm;
+}
