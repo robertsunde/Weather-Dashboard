@@ -13,10 +13,20 @@
 <!-- body including background coloring -->
 
 <body class="bg-dark">
+
+
   <header class="container-fluid text-center text-white bg-dark">
 
     <!-- header -->
     <h1 class="header">Today's Weather</h1>
+    <p class="currentDate"></p>
+
+
+
+
+
+
+
   </header>
 
   <!-- left side container for search bar and recent searches list -->
@@ -35,6 +45,8 @@
       <!-- </ul> -->
 
 
+
+      <!-- Todays Temperature -->
       <div id="remove" class="col-lg-5 todayWeather date">
       </div>
 
@@ -55,41 +67,41 @@
 
 
       <!-- Day 1 -->
-      <div class="col-lg-2 date container">
-        Today
-        <h4 class=""></h4>
-        <span class="searchTemp">
-
-        </span>
+      <div class="col-lg-2">
+      <p class="currentDatePlus1 titleFont"></p>
+      <div class="date tomorrow">
+      </div>
       </div>
 
       <!-- Day 2 -->
-      <div class="col-md-2 date container">
-        Tomorrow
-         <h5 id="cityName">Detroit</h5>
-         <div class="iconHere">
-           <img src="" alt="icon" id="icon">
-           <h6 id="temperature">&#176F</h6>
-           <h6 id="humidity">%</h6>
-         </div>
-
-      </div>
+      <div class="col-lg-2">
+        <p class="currentDatePlus2 titleFont"></p>
+        <div class="date tomorrowPlus1">
+        </div>
+        </div>
 
       <!-- Day 3 -->
-      <div class="col-md-2 date container">
-        The Day After Tomorrow
-      </div>
+      <div class="col-lg-2">
+        <p class="currentDatePlus3 titleFont"></p>
+        <div class="date tomorrowPlus2">
+        </div>
+        </div>
+
       <!-- Day 4 -->
-      <div class="col-md-2 date container">
-        The Day After Tomorrow's Tomorrow
-      </div>
+      <div class="col-lg-2">
+        <p class="currentDatePlus4 titleFont"></p>
+        <div class="date tomorrowPlus3">
+        </div>
+        </div>
+
       <!-- Day 5 -->
-      <div class="col-md-2 date container">
-        The Fourth Tomorrow
-      </div>
+      <div class="col-lg-2">
+        <p class="currentDatePlus5 titleFont"></p>
+        <div class="date tomorrowPlus4">
+        </div>
+        </div>
 
-
-
+    </div>
 
         
       </div>
@@ -110,6 +122,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   <script src="script.js"></script>
 </body>
 
