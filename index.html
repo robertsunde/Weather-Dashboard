@@ -10,23 +10,15 @@
   <link rel="stylesheet" href="./style.css">
   <title>Weather Dashboard</title>
 </head>
+
 <!-- body including background coloring -->
 
 <body class="bg-dark">
 
-
+  <!-- header -->
   <header class="container-fluid text-center text-white bg-dark">
-
-    <!-- header -->
     <h1 class="header">Today's Weather</h1>
     <p class="currentDate titleFont"></p>
-
-
-
-
-
-
-
   </header>
 
   <!-- left side container for search bar and recent searches list -->
@@ -41,36 +33,23 @@
           <button type="search" class="btn btn-light search">Submit</button>
         </form>
       </aside>
-      <!-- <ul class=recentSearches> -->
-      <!-- </ul> -->
 
-
-
-      <!-- Todays Temperature -->
-      <div id="remove" class="col-lg-5 todayWeather date">
+      <!-- Pulls Today's Weather Data from JS file and shows here -->
+      <div id="main" class="col-lg-8 todayWeather date">
       </div>
-
-
-      <div id="remove" class="col-lg-5"> GIF Here
-      </div>
-
-
     </div>
 
+    <!-- starts bottom row which includes recent searches and 5-day forecast -->
+    <div class="row">
 
-      <div class="row">
-        <div class="col-lg-2 lastSearch"></div>
-
-
-
-
-
+      <!-- Pulls recent search and shows here -->
+      <div class="col-lg-2 lastSearch"></div>
 
       <!-- Day 1 -->
       <div class="col-lg-2">
-      <p class="currentDatePlus1 titleFont"></p>
-      <div class="date tomorrow">
-      </div>
+        <p class="currentDatePlus1 titleFont"></p>
+        <div class="date tomorrow">
+        </div>
       </div>
 
       <!-- Day 2 -->
@@ -78,43 +57,33 @@
         <p class="currentDatePlus2 titleFont"></p>
         <div class="date tomorrowPlus1">
         </div>
-        </div>
+      </div>
 
       <!-- Day 3 -->
       <div class="col-lg-2">
         <p class="currentDatePlus3 titleFont"></p>
         <div class="date tomorrowPlus2">
         </div>
-        </div>
+      </div>
 
       <!-- Day 4 -->
       <div class="col-lg-2">
         <p class="currentDatePlus4 titleFont"></p>
         <div class="date tomorrowPlus3">
         </div>
-        </div>
+      </div>
 
       <!-- Day 5 -->
       <div class="col-lg-2">
         <p class="currentDatePlus5 titleFont"></p>
         <div class="date tomorrowPlus4">
         </div>
-        </div>
-
+      </div>
     </div>
 
-        
-      </div>
-
-
-
-
   </div>
-  </div>
-  </div>
- 
 
-
+  <!-- script sources -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
