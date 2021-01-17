@@ -17,6 +17,7 @@ Today's weather will populate at the top-middle of the screen.
 A five-day forecast for the searched city will also populate at the bottom of the screen.
 
 Below is an image showing the results of "Detroit" being entered into the search bar.
+![Weather_Dashboard](https://user-images.githubusercontent.com/73792987/104831172-574b9380-5854-11eb-81be-a8999104c65b.png)
 
 
 Credits:The Website was created with help/information/guidance/images from: 
