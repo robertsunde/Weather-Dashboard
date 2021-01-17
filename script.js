@@ -1,8 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function main () {
 
-document.onload = function runRecent(storage) {
-    var storage = localStorage.getItem("City")
-}
+
 
     //shows correct dates for each of 6 days shown
     $(".currentDate").text(moment().format("dddd, MMMM Do"));
@@ -32,11 +30,12 @@ document.onload = function runRecent(storage) {
             $(".tomorrowPlus2").empty();
             $(".tomorrowPlus3").empty();
             $(".tomorrowPlus4").empty();
+// 
 
 
 
 
-
+// 
             // first api pull for today's weather
             function weatherPull(searchbar) {
                 $.ajax({
@@ -90,11 +89,20 @@ document.onload = function runRecent(storage) {
                         $(".todayWeather").addClass("fas fa-sun fa-3x")
                     }
 
-                    var cityName = $("<h2>").addClass("searchSave").text(response.name)
+                    var cityName = $("<h2>").addClass("searchSave" + (response.name)).text(response.name)
                     $(".lastSearch").prepend(cityName)
-                    localStorage.setItem("City", response.name + ".lastSearch")
+                    localStorage.setItem("City", response.name)
 
 // 
+
+
+
+
+
+// $(".lastSearch").on("click", function(){
+// weatherPull($(".searchSaveDetroit"));
+
+// })
 
 // 
                 })
@@ -112,7 +120,7 @@ document.onload = function runRecent(storage) {
                     method: "GET"
                 }).then(function (response) {
                     console.log(response)
-
+                    $(".tomorrow").empty();
                     // Displays Day 1 Weather
                     var todayTemp1 = $("<h1>").text(response.list[0].main.temp + " " + "F")
                     var todayHumidity1 = $("<h6>").text("Humidity: " + response.list[0].main.humidity + "%")
@@ -155,7 +163,7 @@ document.onload = function runRecent(storage) {
                     // Displays Day 2 weather
                     var todayTemp2 = $("<h1>").text(response.list[1].main.temp + " " + "F")
                     var todayHumidity2 = $("<h6>").text("Humidity: " + response.list[1].main.humidity + "%")
-
+                    $(".tomorrowPlus1").empty();
                     $(".tomorrowPlus1").append(todayTemp2, todayHumidity2)
 
                     // variable and if/else commands to utilize icons for weather changes
@@ -193,7 +201,7 @@ document.onload = function runRecent(storage) {
                     // Displays Day 3 weather
                     var todayTemp3 = $("<h1>").text(response.list[2].main.temp + " " + "F")
                     var todayHumidity3 = $("<h6>").text("Humidity: " + response.list[2].main.humidity + "%")
-
+                    $(".tomorrowPlus2").empty();
                     $(".tomorrowPlus2").append(todayTemp3, todayHumidity3)
 
                     // variable and if/else commands to utilize icons for weather changes
@@ -231,7 +239,7 @@ document.onload = function runRecent(storage) {
                     // Displays Day 4 weather
                     var todayTemp4 = $("<h1>").text(response.list[3].main.temp + " " + "F")
                     var todayHumidity4 = $("<h6>").text("Humidity: " + response.list[3].main.humidity + "%")
-
+                    $(".tomorrowPlus3").empty();
                     $(".tomorrowPlus3").append(todayTemp4, todayHumidity4)
 
                     // variable and if/else commands to utilize icons for weather changes
@@ -269,7 +277,7 @@ document.onload = function runRecent(storage) {
                     //  Displays Day 5 weather
                     var todayTemp5 = $("<h1>").text(response.list[4].main.temp + " " + "F")
                     var todayHumidity5 = $("<h6>").text("Humidity: " + response.list[4].main.humidity + "%")
-
+                    $(".tomorrowPlus4").empty();
                     $(".tomorrowPlus4").append(todayTemp5, todayHumidity5)
 
                     // variable and if/else commands to utilize icons for weather changes
@@ -305,6 +313,7 @@ document.onload = function runRecent(storage) {
                     }
 
 
+                    
 
                 })
             }
