@@ -15,6 +15,18 @@ To use, click within the search bar on the left side of the screen.
 Type a city of your choice within the United States.
 Today's weather will populate at the top-middle of the screen.
 A five-day forecast for the searched city will also populate at the bottom of the screen.
+Icons on each day will change for each search depending on the type of weather on that individual day.
+
+Today's weather will display:
+Temperature
+Humidity
+Wind Speed
+UV Index (will be green for air quality below 4, yellow for air quality between 4 and 7, and red for air quaility above 7)
+
+Five-day forecast will display:
+Temperature
+Humidity
+
 
 Below is an image showing the results of "Detroit" being entered into the search bar.
 ![Weather_Dashboard](https://user-images.githubusercontent.com/73792987/104831172-574b9380-5854-11eb-81be-a8999104c65b.png)
