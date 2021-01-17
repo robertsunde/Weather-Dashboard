@@ -39,7 +39,7 @@ $(document).ready(function main () {
             // first api pull for today's weather
             function weatherPull(searchbar) {
                 $.ajax({
-                    url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchbar + "&appid=80f453ffaaff3c7ad14e0dd13df083a0&units=imperial",
+                    url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchbar + "&appid=80f453ffaaff3c7ad14e0dd13df083a0&units=imperial",
                     method: "GET"
                 }).then(function (response) {
                     console.log(response)
@@ -116,7 +116,7 @@ $(document).ready(function main () {
 
             function forecastPull(searchbar) {
                 $.ajax({
-                    url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchbar + "&appid=80f453ffaaff3c7ad14e0dd13df083a0&units=imperial",
+                    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchbar + "&appid=80f453ffaaff3c7ad14e0dd13df083a0&units=imperial",
                     method: "GET"
                 }).then(function (response) {
                     console.log(response)
