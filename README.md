@@ -43,3 +43,7 @@ https://use.fontawesome.com/releases/v5.8.1/css/all.css
 https://fonts.googleapis.com/css?family=Open+Sans&display=swap 
 https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
 https://fontawesome.com/
+
+
+Be sure to checkout my portfolio for contact info! 
+https://robertsunde.github.io/About-Me-Website/
