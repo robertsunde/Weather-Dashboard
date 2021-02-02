@@ -10,6 +10,7 @@ This weather app is designed to show daily weather as well as a five-day forecas
 
 Upon loading, the user will see a screen with dates that the searched city's weather will populate.
 
+![Weather_Dashboard2](https://user-images.githubusercontent.com/73792987/106539765-9290c800-64cc-11eb-954d-874ef0bd40a7.png)
 
 To use, click within the search bar on the left side of the screen. 
 Type a city of your choice in the search bar that is in the United States.
